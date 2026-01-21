@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Box } from '@mui/material';
 import { CustomThemeProvider } from './contexts/ThemeContext';
 import Navigation from './components/Navigation';

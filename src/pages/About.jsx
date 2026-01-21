@@ -16,6 +16,7 @@ import {
   LocationOn,
   Send,
 } from '@mui/icons-material';
+import developerImg from "../assets/img.jpg";
 
 const About = () => {
   const handleSubmit = (e) => {
@@ -44,7 +45,7 @@ const About = () => {
               />
               <Box
                 component="img"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY9Aqz9X1WSebZtskpr55FAXkZoQcblZxvHRYWiWFNyOSUzwoN5dzDotuHIXXgKjZ85blVY-7sojQwrK1hJw7WHGe3ju_PxA1GKWrAICw4iH9tku9wwu8xVhKePuelPeblk50_Z7qK_DLf6_K74Qf3wmTu4qWYBMdGDqhbq8zSjHMGKfso--hEM0jbnObXdMEvmImnvvn1EOtoF-ByS7EV5ZpRf4Ja7MiBmyTuZosbcNPRnjzXDwrUMwTb153MCazmTYdvbAK4k6FG"
+                src={developerImg}
                 alt="Designer Portrait"
                 sx={{
                   position: 'relative',

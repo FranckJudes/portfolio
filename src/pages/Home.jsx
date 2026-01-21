@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import developerImg from "../assets/img.jpg";
+
 import {
   Container,
   Typography,
@@ -232,11 +234,11 @@ const Home = () => {
                   }}
                 >
                   <img
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY9Aqz9X1WSebZtskpr55FAXkZoQcblZxvHRYWiWFNyOSUzwoN5dzDotuHIXXgKjZ85blVY-7sojQwrK1hJw7WHGe3ju_PxA1GKWrAICw4iH9tku9wwu8xVhKePuelPeblk50_Z7qK_DLf6_K74Qf3wmTu4qWYBMdGDqhbq8zSjHMGKfso--hEM0jbnObXdMEvmImnvvn1EOtoF-ByS7EV5ZpRf4Ja7MiBmyTuZosbcNPRnjzXDwrUMwTb153MCazmTYdvbAK4k6FG"
-                    alt="Designer Portrait"
+                    src={developerImg}
+                    alt="Developer Portrait"
                     style={{
                       width: '100%',
-                      height: '100%',
+                      height: '120%',
                       objectFit: 'cover',
                     }}
                   />
