@@ -30,7 +30,7 @@ const Work = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const filters = ['All', 'Design', 'DevOps'];
+  const filters = ['All', 'DevOps', 'Full Stack', 'Infrastructure'];
 
   const devopsSkills = [
     {
@@ -66,131 +66,285 @@ const Work = () => {
   ];
 
   const projects = [
-    // === DESIGN PROJECTS ===
+    // === DEVOPS & CLOUD PROJECTS ===
     {
-      title: 'Eco-Friendly App',
-      category: 'MOBILE',
-      description: 'Sustainability tracker for urban commuters.',
-      type: 'design',
-      subcategory: 'UI/UX',
-      aspectRatio: '4/3',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCeLbVXOxc5xSARXru6m51AHTQO1HRsZ0SQ-qgx7aQX2QTwvKYOu-LaUG6S4UuOd0j9Fux8NHc_BxbISpyQ803n-i7cAvCGNcmV-P1trv8lXbVSK70pDlkxy_a8j04KHB38OM4QOu2issZsaBz_LxzXzpmUu7ogPG1OZmyrXJAA7n87B5Yfd9O6Jjp60fiBMkqMW5Lu2BpWlZLMuPdN2F6UIhaObfkqlugC6AYS8lIBSsODFsgfuq70B97ScUAjZ0JRefaBVoRLkk03',
-    },
-    {
-      title: 'Web Dashboard',
-      category: 'Enterprise Web App',
-      description: 'Complexity simplified for data analysts.',
-      type: 'design',
-      subcategory: 'Web Design',
-      aspectRatio: '3/4',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBoh2X6E9zvoDalB-Nlz47hRI64nibUYVTAX85Lqatn72r4WE7I6OW8SXKz0azJsUrvptLyI6Ue2aRdvcE-N6FxIICVbMjHIr1Gmoyamq0jSXGBYm2efQ7zCaA8-5bhmKZ8pI2LM82c0gYWkiC624fLalfAvUXbQ6rCgo4uaD7rLyXGISsLtn7ahFQb6FlJSgetywh4f_cevHZfg0JQ0Ha1NevKyd7MwAuSLIMDGptdFE5iHNLKKJ-a-aYLa1NypyicNwyiX5-Af1Wu',
-    },
-    {
-      title: 'Brand Identity',
-      category: 'Visual Design',
-      description: 'Crafting the voice of a tech startup.',
-      type: 'design',
-      subcategory: 'Branding',
-      aspectRatio: '1/1',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBIFlWVPVdtyQTH6ljMMrjPl_5R6Jm__iyvSVDB86XkF6-epHZEby5KiydhgqtSViptXoC607TfkO819nvTgLQB1r70knggIl0_wqaIbNoPqVDf4P-VQkMD4zwIG4pQuOvNJBCshmvxNrNeZhVdIJF9hypJaVn29DXMh-Z4Qmlaw0nZzT6fooHjgFJUN4GlnK4f_b-d6cehB_YxR_2S-n08wYI-_Wq2TEWVETeXZL7lGZQXrd2Fwf9202ET2AOzv_HtTNfryKniwIh3',
-    },
-    {
-      title: 'Aura Commerce',
-      category: 'E-commerce Design',
-      description: 'Increasing conversion by 40% with UX.',
-      type: 'design',
-      subcategory: 'Web Design',
-      aspectRatio: '16/9',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA4qhI1VsYXxnCe4dP96Hqh-YJJPRqqY9MlzuCyVmtUZJwrqup1zjg4vAY6p0iH7yIbCU4l-Mte2JM6cV5xDiSZrMnjUlR9bTsBkRJrcqxEcSXdf3q6QQezpqc3gEn9YMUJB5SvWm6xYeka87zz6t3j-M_1dLdeaOWZSF1LHi8mFjsDpcZYSej_c8xLDzenynakXRX4XvXO4z6UKyb9UJAKmOODgL96qYch0peAhDMaoy2mwm5cczprIsPGWhlo1s_OVIbOQaOomTwJ',
-    },
-    {
-      title: 'Health Tracker',
-      category: 'UI/UX Design',
-      description: 'Connecting doctors and patients.',
-      type: 'design',
-      subcategory: 'Mobile',
-      aspectRatio: '4/5',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCWizWx9g6d2lcmtQhq6CqkgwCbh17AruFRC7ICmQ5a_3iQNSAZl4wlMLTz2_7q053inH0H_Y7FT7G3FsTRq_KcLT1YEbG91ywhXYope97bBBBT5sUAuYPflIvoErRF1lihgVi1xFw3flc8gBWnoqEd9_ToCn274544R-sOboaW2IzSBdzK7Cq7CyP-8Mg7sDw97_o-W6d6uIvZtCJ3oUHL1rKt-9i5pppo02QyzFv-nV-oz6t1vSkIwCJj5_Txz2q4CkJA1Yc0xfAB',
-    },
-    {
-      title: 'Mobile Wallet',
-      category: 'Fintech Solution',
-      description: 'Securing assets with a friendly UI.',
-      type: 'design',
-      subcategory: 'Mobile',
-      aspectRatio: '1/1',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAuJK5mfxk-hF-_HZ21Du1ujh4biS-cxYCIh5_jdN6i2ZGNNbM2w_kqEWm_9eAs8S6aC4xqhHTEx67neRO4h8EOFzFeBzkSm2C7mtUrGumOmrAtjRuFJVNluCbJQdTvcx2j5FG9lh1-XmlTcCVEkzAW6XPC3o5qA42CPMiwSecekzw6urAFeanHfIVBCXHAt1BwbI6G7CU571PjFm1EHYpltPnQKw_k9-QmY_YeC7pwxggoKOtah656I8oOus8co68uoVKY-h4h3t6x',
-    },
-
-    // === DEVOPS PROJECTS ===
-    {
-      title: 'Kubernetes Production Cluster',
-      category: 'Orchestration',
-      description: 'Multi-cluster architecture with service mesh and auto-scaling policies.',
+      title: 'Keycloak SSO Kubernetes OIDC',
+      category: 'Identity & Access Management',
+      description: 'Single Sign-On avec Keycloak, OpenID Connect et Kubernetes. Configuration complète de l\'authentification centralisée pour les applications cloud-native.',
       type: 'devops',
-      subcategory: 'Orchestration',
-      aspectRatio: '16/9',
-      image: 'https://images.unsplash.com/photo-1667372393119-c31291c35e4b?w=800&q=80',
-      stats: { clusters: '5', uptime: '99.9%' },
-    },
-    {
-      title: 'CI/CD GitOps Pipeline',
-      category: 'Industrialisation',
-      description: 'Complete GitOps workflow with ArgoCD and Terraform for multi-cloud deployments.',
-      type: 'devops',
-      subcategory: 'Industrialisation',
+      subcategory: 'Sécurité',
       aspectRatio: '16/9',
       image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
-      stats: { pipelines: 25, deployments: '5000+/mo' },
+      githubUrl: 'https://github.com/FranckJudes/keycloak-sso-kubernetes-oidc',
+      tech: ['Keycloak', 'Kubernetes', 'OIDC', 'SSO'],
     },
     {
-      title: 'Docker Microservices',
-      category: 'Conteneurisation',
-      description: 'Containerized microservices architecture with Compose and Swarm orchestration.',
-      type: 'devops',
-      subcategory: 'Conteneurisation',
-      aspectRatio: '4/3',
-      image: 'https://images.unsplash.com/photo-1605745341112-85968b19335b?w=800&q=80',
-      stats: { services: 15, containers: '100+' },
-    },
-    {
-      title: 'ELK Stack Monitoring',
-      category: 'Observabilité',
-      description: 'Centralized logging and monitoring with ELK Stack and custom Grafana dashboards.',
-      type: 'devops',
-      subcategory: 'Observabilité',
-      aspectRatio: '16/9',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-      stats: { logs: '1TB/jour', dashboards: 45 },
-    },
-    {
-      title: 'PostgreSQL HA Cluster',
-      category: 'Database & Queue',
-      description: 'High availability PostgreSQL setup with Patroni and Etcd for automatic failover.',
-      type: 'devops',
-      subcategory: 'Database',
-      aspectRatio: '4/3',
-      image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80',
-      stats: { nodes: 3, replication: 'sync' },
-    },
-    {
-      title: 'Vault Security Platform',
-      category: 'Sécurité',
-      description: 'Secrets management platform with Vault and dynamic credentials rotation.',
+      title: 'Vault External Secrets K8s',
+      category: 'Secrets Management',
+      description: 'Intégration de HashiCorp Vault avec Kubernetes External Secrets Operator pour la gestion sécurisée des credentials et rotation automatique.',
       type: 'devops',
       subcategory: 'Sécurité',
       aspectRatio: '16/9',
       image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80',
-      stats: { secrets: 500, policies: 50 },
+      githubUrl: 'https://github.com/FranckJudes/vault-kubernetes-external-secrets',
+      tech: ['Vault', 'Kubernetes', 'External Secrets'],
+    },
+    {
+      title: 'ArgoCD Helm CI/CD Pipeline',
+      category: 'GitOps & CI/CD',
+      description: 'Pipeline GitOps complet avec Maven, SonarQube, ArgoCD et Helm. Déploiement automatisé sur Kubernetes avec qualité de code intégrée.',
+      type: 'devops',
+      subcategory: 'Industrialisation',
+      aspectRatio: '16/9',
+      image: 'https://images.unsplash.com/photo-1667372393119-c31291c35e4b?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/project-maven-sonar-argocd-helm-k8s',
+      tech: ['ArgoCD', 'Helm', 'Maven', 'SonarQube', 'GitOps'],
+    },
+    {
+      title: 'Grafana Tempo Distributed Tracing',
+      category: 'Observabilité',
+      description: 'Architecture de tracing distribué avec Tempo, Alloy et Grafana. Visualisation des requêtes à travers les microservices pour debugging performant.',
+      type: 'devops',
+      subcategory: 'Observabilité',
+      aspectRatio: '16/9',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/tempo-alloy-grafana-distributed-tracing-kubernetes',
+      tech: ['Grafana Tempo', 'Alloy', 'Kubernetes', 'Tracing'],
+    },
+    {
+      title: 'Loki Prometheus Monitoring',
+      category: 'Logging & Monitoring',
+      description: 'Stack de monitoring complet avec Loki pour les logs, Prometheus pour les métriques et Grafana pour la visualisation sur Kubernetes.',
+      type: 'devops',
+      subcategory: 'Observabilité',
+      aspectRatio: '16/9',
+      image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/loki-prometheus-grafana-kubernetes-logging-monitoring',
+      tech: ['Loki', 'Prometheus', 'Grafana', 'Kubernetes'],
+    },
+    {
+      title: 'Prometheus Grafana Node Exporter',
+      category: 'Monitoring',
+      description: 'Surveillance des métriques système via Node Exporter avec dashboards Grafana personnalisés pour monitoring infrastructure.',
+      type: 'devops',
+      subcategory: 'Observabilité',
+      aspectRatio: '4/3',
+      image: 'https://images.unsplash.com/photo-1605745341112-85968b19335b?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/prometheus_grafana',
+      tech: ['Prometheus', 'Grafana', 'Node Exporter', 'Shell'],
+    },
+    {
+      title: 'Terraform KVM Infrastructure',
+      category: 'Infrastructure as Code',
+      description: 'Déploiement automatisé de machines virtuelles KVM avec Terraform. Provisionning infrastructure en tant que code.',
+      type: 'devops',
+      subcategory: 'Infrastructure',
+      aspectRatio: '4/3',
+      image: 'https://images.unsplash.com/photo-1667372393119-c31291c35e4b?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/KVM-with-Terraform',
+      tech: ['Terraform', 'KVM', 'HCL', 'IaC'],
+    },
+    {
+      title: 'AWS Lambda EC2 Auto Start/Stop',
+      category: 'Cloud Automation',
+      description: 'Fonction Lambda AWS pour automatiser l\'arrêt et démarrage des instances EC2 selon un planning. Optimisation des coûts cloud.',
+      type: 'devops',
+      subcategory: 'Cloud',
+      aspectRatio: '16/9',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/lambda_stop_start_EC2_aws',
+      tech: ['AWS Lambda', 'EC2', 'Terraform', 'Python'],
+    },
+    {
+      title: 'Consul Service Discovery',
+      category: 'Service Mesh',
+      description: 'Implementation de Consul pour le service discovery, configuration distribuée et health checking des microservices.',
+      type: 'devops',
+      subcategory: 'Orchestration',
+      aspectRatio: '4/3',
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/Consul-Learning',
+      tech: ['Consul', 'Service Discovery', 'HashiCorp'],
+    },
+
+    // === FULL STACK PROJECTS ===
+    {
+      title: 'E-Commerce Spring Boot 3',
+      category: 'Microservices Architecture',
+      description: 'Application e-commerce complète avec Spring Boot 3, Docker, Keycloak, Kafka pour events, Zipkin pour tracing. Architecture microservices.',
+      type: 'fullstack',
+      subcategory: 'Backend',
+      aspectRatio: '16/9',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/E-Commerce-Sprint-Boot-3',
+      tech: ['Spring Boot 3', 'Docker', 'Kafka', 'Keycloak', 'Zipkin', 'Java'],
+    },
+    {
+      title: 'React Native Boilerplate',
+      category: 'Mobile Development',
+      description: 'Boilerplate production-ready React Native avec Expo SDK 54, React 19.1, Expo Router v6, Redux Toolkit, TypeScript. Optimisé pour le développement moderne.',
+      type: 'fullstack',
+      subcategory: 'Frontend Mobile',
+      aspectRatio: '4/3',
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/react-native-boilerplate',
+      tech: ['React Native', 'Expo', 'TypeScript', 'Redux Toolkit', 'React 19'],
+    },
+    {
+      title: 'Hotel Management Spring Boot',
+      category: 'Backend Application',
+      description: 'Système de gestion hôtelière avec Spring Boot, REST API, persistance des données et architecture layerée.',
+      type: 'fullstack',
+      subcategory: 'Backend',
+      aspectRatio: '4/3',
+      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/Hotel-Backend',
+      tech: ['Spring Boot', 'Java', 'REST API', 'Backend'],
+    },
+    {
+      title: 'Hotel Version Laravel',
+      category: 'Full Stack Web',
+      description: 'Application de gestion d\'hôtel avec Laravel PHP, MySQL, Blade templates. CRUD complet avec authentification.',
+      type: 'fullstack',
+      subcategory: 'Full Stack',
+      aspectRatio: '16/9',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/Hotel-Version-Laravel',
+      tech: ['Laravel', 'PHP', 'MySQL', 'Blade'],
+    },
+    {
+      title: 'E-Commerce Laravel Vue.js',
+      category: 'Full Stack Application',
+      description: 'Plateforme e-commerce avec Laravel 9 backend et Vue.js frontend. Intégration paiement, gestion panier, admin dashboard.',
+      type: 'fullstack',
+      subcategory: 'Full Stack',
+      aspectRatio: '16/9',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/E-Commerce',
+      tech: ['Laravel', 'Vue.js', 'PHP', 'MySQL', 'JavaScript'],
+    },
+    {
+      title: 'REST API Laravel MySQL',
+      category: 'Backend API',
+      description: 'API RESTful complète avec Laravel et MySQL. CRUD endpoints, authentification, validation, documentation API.',
+      type: 'fullstack',
+      subcategory: 'Backend',
+      aspectRatio: '4/3',
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/API_RESTFful_laravel_mysql',
+      tech: ['Laravel', 'REST API', 'MySQL', 'PHP'],
+    },
+    {
+      title: 'Laravel Sanctum API Complete',
+      category: 'Authentication API',
+      description: 'API complète avec Laravel Sanctum pour authentification SPA, mobile, et token-based. CRUD avec permissions et middlewares.',
+      type: 'fullstack',
+      subcategory: 'Backend',
+      aspectRatio: '4/3',
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/sanctum_api_complet',
+      tech: ['Laravel Sanctum', 'REST API', 'Auth', 'PHP'],
+    },
+    {
+      title: 'Shoes E-commerce Backend',
+      category: 'Backend Development',
+      description: 'Backend pour application e-commerce de chaussures. API REST, gestion produits, commandes et utilisateurs.',
+      type: 'fullstack',
+      subcategory: 'Backend',
+      aspectRatio: '16/9',
+      image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/shoes-backend',
+      tech: ['PHP', 'Backend', 'REST API'],
+    },
+    {
+      title: 'Pokemon App React Native',
+      category: 'Mobile Application',
+      description: 'Application mobile simple pour Pokémon avec React Native et Expo. Liste, détails et recherche de Pokémon.',
+      type: 'fullstack',
+      subcategory: 'Frontend Mobile',
+      aspectRatio: '4/5',
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/Simple-APP-mobile-Pokemon',
+      tech: ['React Native', 'Expo', 'TypeScript', 'API'],
+    },
+    {
+      title: 'Angular CV Portfolio',
+      category: 'Frontend Web',
+      description: 'Portfolio web interactif développé avec Angular. Présentation CV et projets avec design moderne.',
+      type: 'fullstack',
+      subcategory: 'Frontend',
+      aspectRatio: '16/9',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/CV-6-Angular',
+      tech: ['Angular', 'TypeScript', 'HTML', 'CSS'],
+    },
+
+    // === INFRASTRUCTURE & SCRIPTING ===
+    {
+      title: 'Docker Containers SSH Manager',
+      category: 'DevOps Tools',
+      description: 'Script Bash pour gérer des conteneurs Docker exécutant SSH. Création, suppression et affichage IP des conteneurs.',
+      type: 'devops',
+      subcategory: 'DevOps Tools',
+      aspectRatio: '4/3',
+      image: 'https://images.unsplash.com/photo-1605745341112-85968b19335b?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/Gestion-de-Conteneurs-Docker-avec-SSH',
+      tech: ['Docker', 'Bash', 'Shell', 'SSH'],
+    },
+    {
+      title: 'Static Site Deployment',
+      category: 'DevOps Automation',
+      description: 'Déploiement de sites statiques avec rsync sur serveur. Automatisation du déploiement CI/CD pour sites web.',
+      type: 'devops',
+      subcategory: 'DevOps Tools',
+      aspectRatio: '16/9',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/Static-Site-Server',
+      tech: ['rsync', 'Shell', 'Deployment', 'CI/CD'],
+    },
+    {
+      title: 'Nginx Docker Domain Deployment',
+      category: 'Web Infrastructure',
+      description: 'Déploiement de site web avec Nginx, Docker et configuration nom de domaine distant. Reverse proxy et SSL.',
+      type: 'devops',
+      subcategory: 'Infrastructure',
+      aspectRatio: '16/9',
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/Deploy-website-with-Nginx-Docker-and-remote-domain-name',
+      tech: ['Nginx', 'Docker', 'SSL', 'Deployment'],
+    },
+    {
+      title: 'Server Performance Analyzer',
+      category: 'Monitoring Tools',
+      description: 'Script d\'analyse des statistiques de performance serveur. CPU, mémoire, disque, réseau avec génération de rapports.',
+      type: 'devops',
+      subcategory: 'DevOps Tools',
+      aspectRatio: '4/3',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/Server-Performance-Stats',
+      tech: ['Shell', 'Monitoring', 'Performance', 'Linux'],
+    },
+    {
+      title: 'Git Automation Helper',
+      category: 'DevOps Tools',
+      description: 'Script pour automatiser les commandes Git courantes. Alias, workflows automatisés et raccourcis pour productivité.',
+      type: 'devops',
+      subcategory: 'DevOps Tools',
+      aspectRatio: '16/9',
+      image: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&q=80',
+      githubUrl: 'https://github.com/FranckJudes/git-help',
+      tech: ['Git', 'Shell', 'Automation', 'DevOps'],
     },
   ];
 
   const filteredProjects = projects.filter(project => {
     const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         project.description.toLowerCase().includes(searchQuery.toLowerCase());
+                         project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         (project.tech && project.tech.some(t => t.toLowerCase().includes(searchQuery.toLowerCase())));
     const matchesFilter = activeFilter === 'All' ||
-                         (activeFilter === 'Design' && project.type === 'design') ||
-                         (activeFilter === 'DevOps' && project.type === 'devops');
+                         (activeFilter === 'DevOps' && project.type === 'devops') ||
+                         (activeFilter === 'Full Stack' && project.type === 'fullstack') ||
+                         (activeFilter === 'Infrastructure' && (project.subcategory === 'Infrastructure' || project.subcategory === 'DevOps Tools' || project.subcategory === 'Cloud' || project.subcategory === 'Orchestration'));
     return matchesSearch && matchesFilter;
   });
 
@@ -241,7 +395,7 @@ const Work = () => {
               maxWidth: 500,
             }}
           >
-            Design & DevOps projects showcasing functional minimalism and infrastructure excellence.
+            Full Stack & DevOps projets GitHub : Kubernetes, Docker, Spring Boot, Laravel, React Native, CI/CD, et plus encore.
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, color: 'text.secondary' }}>
@@ -441,11 +595,11 @@ const Work = () => {
                       }}
                     />
                     <Chip
-                      label={project.type === 'devops' ? 'DevOps' : 'Design'}
+                      label={project.type === 'devops' ? 'DevOps' : project.type === 'fullstack' ? 'Full Stack' : 'Project'}
                       size="small"
                       sx={{
-                        bgcolor: project.type === 'devops' ? 'secondary.main' : 'background.default',
-                        color: project.type === 'devops' ? 'white' : 'text.secondary',
+                        bgcolor: project.type === 'devops' ? 'secondary.main' : project.type === 'fullstack' ? 'success.main' : 'background.default',
+                        color: project.type === 'devops' || project.type === 'fullstack' ? 'white' : 'text.secondary',
                         fontWeight: 700,
                         fontSize: '0.75rem',
                       }}
@@ -463,31 +617,36 @@ const Work = () => {
                     {project.description}
                   </Typography>
 
-                  {/* Stats for DevOps projects */}
-                  {project.stats && (
+                  {/* Tech Stack */}
+                  {project.tech && (
                     <Box
                       sx={{
                         display: 'flex',
-                        gap: 3,
+                        flexWrap: 'wrap',
+                        gap: 1,
                         pt: 2,
                         borderTop: '1px solid',
                         borderColor: 'divider',
                       }}
                     >
-                      {Object.entries(project.stats).map(([key, value]) => (
-                        <Box key={key}>
-                          <Typography sx={{ fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>
-                            {key}
-                          </Typography>
-                          <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: 'primary.main' }}>
-                            {value}
-                          </Typography>
-                        </Box>
+                      {project.tech.map((tech, techIndex) => (
+                        <Chip
+                          key={techIndex}
+                          label={tech}
+                          size="small"
+                          sx={{
+                            bgcolor: 'background.default',
+                            color: 'text.secondary',
+                            fontWeight: 600,
+                            fontSize: '0.7rem',
+                            height: 24,
+                          }}
+                        />
                       ))}
                     </Box>
                   )}
 
-                  {!project.stats && (
+                  {!project.tech && (
                     <Box sx={{ display: 'flex', gap: 1 }}>
                       <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: 'primary.main' }} />
                       <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: 'divider' }} />
@@ -513,7 +672,7 @@ const Work = () => {
                   }}
                 >
                   <Typography sx={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.875rem', fontWeight: 600, mb: 1 }}>
-                    {project.type === 'devops' ? 'Infrastructure' : 'Case Study'}
+                    {project.type === 'devops' ? 'Infrastructure & Cloud' : project.type === 'fullstack' ? 'Full Stack Application' : 'Project'}
                   </Typography>
                   <Typography sx={{ color: 'white', fontSize: '1.25rem', fontWeight: 900, mb: 2, lineHeight: 1.2 }}>
                     {project.title}
@@ -533,7 +692,7 @@ const Work = () => {
                       },
                     }}
                   >
-                    View Details
+                    View on GitHub
                   </Button>
                 </Box>
               </Card>
@@ -545,6 +704,10 @@ const Work = () => {
       {/* Load More Section */}
       <Box sx={{ mt: 15, textAlign: 'center' }}>
         <Button
+          component="a"
+          href="https://github.com/FranckJudes?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
           sx={{
             position: 'relative',
             display: 'inline-flex',
@@ -559,6 +722,7 @@ const Work = () => {
             color: 'primary.main',
             fontWeight: 800,
             transition: 'all 0.2s',
+            textDecoration: 'none',
             '&:hover': {
               bgcolor: 'primary.main',
               color: 'white',
@@ -566,10 +730,10 @@ const Work = () => {
           }}
         >
           <Autorenew />
-          Load More Projects
+          View All Projects on GitHub
         </Button>
         <Typography sx={{ mt: 3, color: 'text.secondary', fontSize: '0.875rem', fontWeight: 500 }}>
-          Showing {filteredProjects.length} of {projects.length} projects
+          Showing {filteredProjects.length} of {projects.length} selected projects • 96+ projects on GitHub
         </Typography>
       </Box>
     </Container>

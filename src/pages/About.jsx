@@ -9,12 +9,14 @@ import {
   Paper,
 } from '@mui/material';
 import {
-  Share,
+  GitHub,
+  LinkedIn,
   Email,
-  Public,
   AlternateEmail,
   LocationOn,
   Send,
+  Code,
+  Cloud,
 } from '@mui/icons-material';
 import developerImg from "../assets/img.jpg";
 
@@ -46,7 +48,7 @@ const About = () => {
               <Box
                 component="img"
                 src={developerImg}
-                alt="Designer Portrait"
+                alt="Franck Judes - Full Stack Developer & DevOps Engineer"
                 sx={{
                   position: 'relative',
                   width: '100%',
@@ -84,32 +86,89 @@ const About = () => {
                     lineHeight: 1.1,
                   }}
                 >
-                  I design for the <Box component="span" sx={{ color: 'accent.main' }}>future</Box> of the web.
+                  Full Stack <Box component="span" sx={{ color: 'primary.main' }}>Developer</Box> & DevOps Engineer.
                 </Typography>
-                <Typography sx={{ color: 'text.secondary', fontSize: '1.25rem', lineHeight: 1.6 }}>
-                  Based in San Francisco, I am a product designer with a decade of experience in building high-performance design systems and intuitive user interfaces. My work focuses on the intersection of human psychology and digital craftsmanship.
+                <Typography sx={{ color: 'text.secondary', fontSize: '1.125rem', lineHeight: 1.6 }}>
+                  Passionné par le développement web et l'ingénierie Cloud, je combine expertise Full Stack et
+                  pratiques DevOps pour créer des applications scalables et résilientes. Avec 96+ projets GitHub,
+                  je maîtrise React, Spring Boot, Laravel, Kubernetes, Docker et les pipelines CI/CD.
+                </Typography>
+                <Typography sx={{ color: 'text.secondary', fontSize: '1.125rem', lineHeight: 1.6 }}>
+                  Mon approche : écrire du code propre, automatiser l'infrastructure, et garantir la qualité
+                  à chaque étape du développement.
                 </Typography>
               </Box>
 
               {/* Stats */}
               <Grid container spacing={4} sx={{ py: 2 }}>
                 <Grid item xs={6}>
-                  <Typography variant="h3" sx={{ fontWeight: 700, fontSize: '2rem' }}>
-                    100+
-                  </Typography>
-                  <Typography sx={{ color: 'text.secondary', fontWeight: 500 }}>
-                    Projects Completed
-                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                    <Box sx={{ color: 'primary.main' }}>
+                      <GitHub fontSize="large" />
+                    </Box>
+                    <Box>
+                      <Typography variant="h3" sx={{ fontWeight: 700, fontSize: '2rem', lineHeight: 1 }}>
+                        96+
+                      </Typography>
+                      <Typography sx={{ color: 'text.secondary', fontWeight: 500, fontSize: '0.875rem' }}>
+                        Projets GitHub
+                      </Typography>
+                    </Box>
+                  </Box>
                 </Grid>
                 <Grid item xs={6}>
-                  <Typography variant="h3" sx={{ fontWeight: 700, fontSize: '2rem' }}>
-                    12
-                  </Typography>
-                  <Typography sx={{ color: 'text.secondary', fontWeight: 500 }}>
-                    Design Awards
-                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                    <Box sx={{ color: 'primary.main' }}>
+                      <Code fontSize="large" />
+                    </Box>
+                    <Box>
+                      <Typography variant="h3" sx={{ fontWeight: 700, fontSize: '2rem', lineHeight: 1 }}>
+                        50+
+                      </Typography>
+                      <Typography sx={{ color: 'text.secondary', fontWeight: 500, fontSize: '0.875rem' }}>
+                        Technologies
+                      </Typography>
+                    </Box>
+                  </Box>
                 </Grid>
               </Grid>
+
+              {/* Tech Stack Highlights */}
+              <Box>
+                <Typography sx={{ fontWeight: 700, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: 2, mb: 2 }}>
+                  Core Technologies
+                </Typography>
+                <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap' }}>
+                  {[
+                    { icon: <Cloud />, label: 'Kubernetes' },
+                    { icon: <Code />, label: 'React' },
+                    { icon: <Code />, label: 'Spring Boot' },
+                    { icon: <Code />, label: 'Laravel' },
+                    { icon: <Cloud />, label: 'Docker' },
+                    { icon: <Cloud />, label: 'AWS' },
+                  ].map((tech, index) => (
+                    <Box
+                      key={index}
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 0.5,
+                        px: 2,
+                        py: 1,
+                        borderRadius: 2,
+                        bgcolor: 'background.paper',
+                        border: '1px solid',
+                        borderColor: 'divider',
+                      }}
+                    >
+                      <Box sx={{ color: 'primary.main', fontSize: '0.875rem' }}>{tech.icon}</Box>
+                      <Typography sx={{ fontSize: '0.875rem', fontWeight: 600 }}>
+                        {tech.label}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Box>
+              </Box>
 
               {/* Social Links */}
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
@@ -118,14 +177,28 @@ const About = () => {
                 </Typography>
                 <Box sx={{ display: 'flex', gap: 2 }}>
                   {[
-                    { icon: <Share />, label: 'Share' },
-                    { icon: <Email />, label: 'Email' },
-                    { icon: <Public />, label: 'Website' },
+                    {
+                      icon: <GitHub />,
+                      label: 'GitHub',
+                      href: 'https://github.com/FranckJudes',
+                    },
+                    {
+                      icon: <LinkedIn />,
+                      label: 'LinkedIn',
+                      href: 'https://www.linkedin.com/in/franck-judes-devops-cameroun-yaounde-backend/',
+                    },
+                    {
+                      icon: <Email />,
+                      label: 'Email',
+                      href: 'mailto:franckjudes87@gmail.com',
+                    },
                   ].map((social, index) => (
                     <Box
                       key={index}
                       component="a"
-                      href="#"
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       sx={{
                         width: 48,
                         height: 48,
@@ -144,6 +217,7 @@ const About = () => {
                           bgcolor: 'primary.main',
                           color: 'white',
                           borderColor: 'primary.main',
+                          transform: 'translateY(-2px)',
                         },
                       }}
                     >
@@ -157,6 +231,86 @@ const About = () => {
         </Grid>
       </Container>
 
+      {/* Skills Section */}
+      <Box
+        sx={{
+          bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.02)' : 'grey.50',
+          py: { xs: 8, lg: 12 },
+          borderTop: '1px solid',
+          borderBottom: '1px solid',
+          borderColor: 'divider',
+        }}
+      >
+        <Container maxWidth="xl" sx={{ px: { xs: 3, lg: 6 } }}>
+          <Typography
+            variant="h2"
+            sx={{
+              mb: 6,
+              fontSize: { xs: '1.75rem', lg: '2.25rem' },
+              fontWeight: 700,
+              textAlign: 'center',
+            }}
+          >
+            Expertise Techniques
+          </Typography>
+          <Grid container spacing={3}>
+            {[
+              {
+                title: 'DevOps & Cloud',
+                skills: ['Kubernetes', 'Docker', 'Helm', 'Terraform', 'AWS', 'CI/CD', 'GitOps', 'ArgoCD'],
+              },
+              {
+                title: 'Backend',
+                skills: ['Spring Boot', 'Laravel', 'Node.js', 'Java', 'PHP', 'REST API', 'Kafka', 'PostgreSQL'],
+              },
+              {
+                title: 'Frontend',
+                skills: ['React', 'React Native', 'Expo', 'Angular', 'Vue.js', 'TypeScript', 'Redux', 'Next.js'],
+              },
+              {
+                title: 'Observability',
+                skills: ['Prometheus', 'Grafana', 'Loki', 'Tempo', 'ELK Stack', 'Zipkin', 'Vault', 'Keycloak'],
+              },
+            ].map((category, index) => (
+              <Grid item xs={12} sm={6} lg={3} key={index}>
+                <Paper
+                  sx={{
+                    p: 3,
+                    height: '100%',
+                    bgcolor: 'background.paper',
+                    border: '1px solid',
+                    borderColor: 'divider',
+                    borderRadius: 3,
+                  }}
+                >
+                  <Typography sx={{ fontWeight: 700, fontSize: '1rem', mb: 2, color: 'primary.main' }}>
+                    {category.title}
+                  </Typography>
+                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                    {category.skills.map((skill, skillIndex) => (
+                      <Box
+                        key={skillIndex}
+                        sx={{
+                          px: 1.5,
+                          py: 0.5,
+                          borderRadius: 1,
+                          bgcolor: 'background.default',
+                          fontSize: '0.75rem',
+                          fontWeight: 600,
+                          color: 'text.secondary',
+                        }}
+                      >
+                        {skill}
+                      </Box>
+                    ))}
+                  </Box>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
       {/* Contact Section */}
       <Container maxWidth="xl" sx={{ py: { xs: 10, lg: 16 }, px: { xs: 3, lg: 6 } }}>
         <Grid container spacing={{ xs: 8, lg: 12 }}>
@@ -164,10 +318,11 @@ const About = () => {
           <Grid item xs={12} lg={5} sx={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             <Box>
               <Typography variant="h2" sx={{ fontWeight: 800, fontSize: { xs: '2rem', lg: '2.5rem' }, mb: 3 }}>
-                Let's build something extraordinary.
+                Travaillons ensemble.
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '1.125rem' }}>
-                Whether you have a specific project in mind or just want to say hello, my inbox is always open.
+                Que vous ayez un projet spécifique en tête ou que vous souhaitiez simplement échanger,
+                n'hésitez pas à me contacter.
               </Typography>
             </Box>
 
@@ -176,15 +331,29 @@ const About = () => {
                 {
                   icon: <AlternateEmail />,
                   label: 'Email',
-                  value: 'hello@creative.studio',
+                  value: 'franckjudes87@gmail.com',
+                  href: 'mailto:franckjudes87@gmail.com',
+                },
+                {
+                  icon: <GitHub />,
+                  label: 'GitHub',
+                  value: 'github.com/FranckJudes',
+                  href: 'https://github.com/FranckJudes',
                 },
                 {
                   icon: <LocationOn />,
-                  label: 'Office',
-                  value: 'San Francisco, CA',
+                  label: 'Localisation',
+                  value: 'Yaoundé, Cameroun / Remote',
                 },
               ].map((item, index) => (
-                <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
+                <Box
+                  key={index}
+                  component={item.href ? "a" : "div"}
+                  href={item.href}
+                  target={item.href ? "_blank" : undefined}
+                  rel={item.href ? "noopener noreferrer" : undefined}
+                  sx={{ display: 'flex', alignItems: 'center', gap: 3, textDecoration: 'none' }}
+                >
                   <Box
                     sx={{
                       width: 48,
@@ -229,11 +398,11 @@ const About = () => {
                 <Grid container spacing={3}>
                   <Grid item xs={12} md={6}>
                     <Typography sx={{ fontSize: '0.875rem', fontWeight: 700, color: 'text.secondary', mb: 1, ml: 0.5 }}>
-                      Full Name
+                      Nom complet
                     </Typography>
                     <TextField
                       fullWidth
-                      placeholder="John Doe"
+                      placeholder="Jean Dupont"
                       sx={{
                         '& .MuiOutlinedInput-root': {
                           bgcolor: 'transparent',
@@ -255,11 +424,11 @@ const About = () => {
                   </Grid>
                   <Grid item xs={12} md={6}>
                     <Typography sx={{ fontSize: '0.875rem', fontWeight: 700, color: 'text.secondary', mb: 1, ml: 0.5 }}>
-                      Email Address
+                      Email
                     </Typography>
                     <TextField
                       fullWidth
-                      placeholder="john@example.com"
+                      placeholder="jean@example.com"
                       type="email"
                       sx={{
                         '& .MuiOutlinedInput-root': {
@@ -284,11 +453,11 @@ const About = () => {
 
                 <Box>
                   <Typography sx={{ fontSize: '0.875rem', fontWeight: 700, color: 'text.secondary', mb: 1, ml: 0.5 }}>
-                    Subject
+                    Sujet
                   </Typography>
                   <TextField
                     fullWidth
-                    placeholder="How can I help?"
+                    placeholder="Comment puis-je vous aider ?"
                     sx={{
                       '& .MuiOutlinedInput-root': {
                         bgcolor: 'transparent',
@@ -317,7 +486,7 @@ const About = () => {
                     fullWidth
                     multiline
                     rows={5}
-                    placeholder="Tell me about your project..."
+                    placeholder="Parlez-moi de votre projet..."
                     sx={{
                       '& .MuiOutlinedInput-root': {
                         bgcolor: 'transparent',
@@ -351,7 +520,7 @@ const About = () => {
                     boxShadow: (theme) => theme.palette.mode === 'dark' ? '0 4px 6px -1px rgba(0, 0, 0, 0.4)' : 1,
                   }}
                 >
-                  Send Message
+                  Envoyer le message
                 </Button>
               </Box>
             </Paper>

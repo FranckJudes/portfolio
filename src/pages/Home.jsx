@@ -19,11 +19,11 @@ import {
 import {
   Verified,
   ArrowDownward,
-  DesignServices,
-  BrandingWatermark,
-  Devices,
-  PhoneIphone,
-  AutoAwesome,
+  Cloud,
+  Storage,
+  Code,
+  Terminal,
+  Settings,
   ArrowForward,
   FormatQuote,
 } from '@mui/icons-material';
@@ -81,7 +81,7 @@ const Home = () => {
               <ScrollReveal variant="fadeUp" delay={0}>
                 <Chip
                   icon={<Verified sx={{ fontSize: 16 }} />}
-                  label="Available for projects"
+                  label="Open to opportunities"
                   sx={{
                     bgcolor: 'primary.main',
                     color: 'white',
@@ -108,7 +108,7 @@ const Home = () => {
                     color: 'text.primary',
                   }}
                 >
-                  Crafting{' '}
+                  Full Stack{' '}
                   <Box
                     component="span"
                     sx={{
@@ -117,7 +117,7 @@ const Home = () => {
                       display: 'inline-block',
                     }}
                   >
-                    meaningful
+                    Developer
                     <Box
                       sx={{
                         position: 'absolute',
@@ -133,7 +133,7 @@ const Home = () => {
                     />
                   </Box>
                   <br />
-                  digital experiences.
+                  & DevOps Engineer.
                 </Typography>
               </ScrollReveal>
 
@@ -146,8 +146,9 @@ const Home = () => {
                     fontSize: { xs: '1rem', lg: '1.125rem' },
                   }}
                 >
-                  I'm a UI/UX Designer focused on building functional and beautiful products
-                  for global brands, combining Material Design precision with creative flair.
+                  Je suis un développeur Full Stack et ingénieur DevOps passionné par la création d'applications
+                  modernes et l'automatisation d'infrastructures cloud. Spécialisé React, Spring Boot, Laravel,
+                  Kubernetes, Docker et CI/CD.
                 </Typography>
               </ScrollReveal>
 
@@ -176,6 +177,8 @@ const Home = () => {
                     </Button>
                   </Link>
                   <Button
+                    component={Link}
+                    to="/about"
                     variant="outlined"
                     size="large"
                     sx={{
@@ -184,6 +187,7 @@ const Home = () => {
                       fontSize: '1.125rem',
                       borderRadius: 3,
                       borderColor: 'divider',
+                      textDecoration: 'none',
                       '&:hover': {
                         borderColor: 'primary.main',
                         bgcolor: 'action.hover',
@@ -235,7 +239,7 @@ const Home = () => {
                 >
                   <img
                     src={developerImg}
-                    alt="Developer Portrait"
+                    alt="Franck Judes - Full Stack Developer & DevOps Engineer"
                     style={{
                       width: '100%',
                       height: '120%',
@@ -287,11 +291,11 @@ const Home = () => {
 
               <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 {[
-                  { icon: <DesignServices />, label: 'UI/UX Design' },
-                  { icon: <BrandingWatermark />, label: 'Visual Identity' },
-                  { icon: <Devices />, label: 'Web App Architecture' },
-                  { icon: <PhoneIphone />, label: 'Mobile First' },
-                  { icon: <AutoAwesome />, label: 'Motion Graphics' },
+                  { icon: <Cloud />, label: 'Kubernetes & Docker' },
+                  { icon: <Storage />, label: 'CI/CD & GitOps' },
+                  { icon: <Code />, label: 'React & Spring Boot' },
+                  { icon: <Terminal />, label: 'Laravel & Node.js' },
+                  { icon: <Settings />, label: 'AWS & Terraform' },
                 ].map((skill, index) => (
                   <Box
                     key={index}
@@ -330,10 +334,10 @@ const Home = () => {
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', mb: 8 }}>
             <Box>
               <Typography variant="h2" sx={{ mb: 2, fontSize: { xs: '2rem', lg: '2.5rem' } }}>
-                Featured Work
+                Featured Projects
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '1.125rem' }}>
-                A selection of recent projects from various industries.
+                Une sélection de mes projets DevOps et Full Stack sur GitHub.
               </Typography>
             </Box>
             <Link to="/work" style={{ textDecoration: 'none' }}>
@@ -359,45 +363,48 @@ const Home = () => {
         <Grid container spacing={4}>
           {[
             {
-              title: 'Aura Fintech App',
-              category: 'Fintech',
-              tags: ['Product Design', 'UI/UX'],
-              description: 'Reimagining the banking experience for digital-first users with high accessibility standards.',
-              image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAl2A40qIEsn7PbFDqeuT9bL-QylsEhU0rKupfmNbsTZ4GCe540uKz4YZ-5LmXhXLA39dbcfb7x0oqWR-ZUBzsJyeGY491kGDNAvolIdQ3ulq33g82MwvJ6mFjEvcfiN027uQJBD__uBdfxUHu_xziA6tYELW3OBZVcZKGYSGXZg32msP0tPZ_8vkBkVICBu0IdLSfGAe-H-6CHagbODKNk143yn3Jd82H7sNFE2bMrF6mCqNAsr8uZz24_0UaV9g2WW-F0Yrfl0Xwc',
+              title: 'Keycloak SSO Kubernetes OIDC',
+              category: 'DevOps',
+              tags: ['Kubernetes', 'Keycloak', 'SSO', 'Security'],
+              description: 'Single Sign-On avec Keycloak, OpenID Connect et Kubernetes pour applications cloud-native.',
+              image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+              link: '/project/0',
             },
             {
-              title: 'Eco-Store Design',
-              category: 'Retail',
-              tags: ['Visual Identity', 'E-commerce'],
-              description: 'A sustainable brand identity and platform for curated eco-friendly household goods.',
-              image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDwk-Nt_Ey134GTUKe0lFeZyJFl5e59LETTThaklGLL8LSB-ht1I4TDxkuppdDgXucbUC2tNJ2cvmA-obYTvrgIs3qw0qaYwkZrU_7l7jhVkTjJ1JMK2SjFaMO48iyMKQFYy7Ap42nxvZiNQsc0BFsle0pLPuUAp2noXJ26EEo60iCkHlcOf3JU6cNPzPAF3yUAK0vmIpK3SjGtpbHO6y-0stqNyRTyZ73i_cEhaJprXVAq-AHncAhKTPlQTnwVpd3JSKLP4oMZJSQZ',
+              title: 'E-Commerce Spring Boot 3',
+              category: 'Full Stack',
+              tags: ['Spring Boot', 'Docker', 'Kafka', 'Microservices'],
+              description: 'Architecture microservices complète avec Spring Boot 3, Docker, Keycloak, Kafka et Zipkin.',
+              image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
+              link: '/project/9',
             },
             {
-              title: 'Pulse Health Tracker',
-              category: 'Health',
-              tags: ['Web App', 'Healthcare'],
-              description: 'Real-time biometric monitoring dashboard for personalized wellness and healthcare professionals.',
-              image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDjjeQmNw8wtyROGXuWmUa8X6_IHyMSth77r5-frsUUiFlbaGesv8WYV6-nDYx40Iy9syXzen-cdGQ8TpM7QOrlf2ngOeK9-zWGbIY0WnGDPxQdrdni7y-0vEu47NkuFaSTRDTU-FCEQpO-4J-M0V-LSC1udjos1yYrXyL9DJRJ-eUyDClTBR14SOagED5_0ZCXTAHJbPD-kWkaoGXJDue1HjH-nK343--7eVtoArrwoNFon1dL51UHT_d8ENxN9V4JCi24KSqqaxV7',
+              title: 'React Native Boilerplate',
+              category: 'Mobile',
+              tags: ['React Native', 'Expo', 'TypeScript', 'Redux'],
+              description: 'Boilerplate production-ready avec Expo SDK 54, React 19.1, Expo Router v6 et Redux Toolkit.',
+              image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80',
+              link: '/project/10',
             },
           ].map((project, index) => (
             <Grid item xs={12} md={6} lg={4} key={index}>
               <ScrollReveal variant="fadeUp" delay={index * 0.1}>
                 <Card
-                  component={motion.div}
-                  whileHover={{ y: -8 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                  component={Link}
+                  to={project.link}
                   sx={{
                     height: '100%',
                     borderRadius: 4,
                     border: '1px solid',
                     borderColor: 'divider',
                     boxShadow: 1,
+                    textDecoration: 'none',
                     '&:hover': {
                       boxShadow: (theme) => theme.palette.mode === 'dark' ? '0 20px 40px rgba(0, 0, 0, 0.3)' : '0 20px 40px rgba(0, 0, 0, 0.1)',
                     },
                   }}
                 >
-                  <Box sx={{ position: 'relative', pt: '70%' }}>
+                  <Box sx={{ position: 'relative', pt: '65%' }}>
                     <CardMedia
                       component="img"
                       image={project.image}
@@ -434,6 +441,7 @@ const Home = () => {
                         fontWeight: 700,
                         mb: 2,
                         fontSize: '1.125rem',
+                        color: 'text.primary',
                       }}
                     >
                       {project.title}
@@ -472,6 +480,48 @@ const Home = () => {
             </Grid>
           ))}
         </Grid>
+      </Container>
+
+      {/* Stats Section */}
+      <Container maxWidth="xl" sx={{ py: { xs: 8, lg: 12 }, px: { xs: 3, lg: 8 } }}>
+        <ScrollReveal variant="fadeUp">
+          <Grid container spacing={4}>
+            {[
+              { value: '96+', label: 'Projets GitHub' },
+              { value: '50+', label: 'Technologies maîtrisées' },
+              { value: 'DevOps', label: 'Expertise Cloud' },
+              { value: 'Full Stack', label: 'Développement Web' },
+            ].map((stat, index) => (
+              <Grid item xs={6} md={3} key={index}>
+                <Box
+                  sx={{
+                    textAlign: 'center',
+                    p: 3,
+                    borderRadius: 3,
+                    bgcolor: 'background.paper',
+                    border: '1px solid',
+                    borderColor: 'divider',
+                  }}
+                >
+                  <Typography
+                    variant="h3"
+                    sx={{
+                      fontWeight: 800,
+                      fontSize: { xs: '2rem', lg: '2.5rem' },
+                      color: 'primary.main',
+                      mb: 1,
+                    }}
+                  >
+                    {stat.value}
+                  </Typography>
+                  <Typography sx={{ color: 'text.secondary', fontWeight: 500, fontSize: '0.875rem' }}>
+                    {stat.label}
+                  </Typography>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </ScrollReveal>
       </Container>
 
       {/* Testimonial Section - Enhanced with better design */}
@@ -543,16 +593,16 @@ const Home = () => {
                   fontSize: { xs: '1.5rem', lg: '2rem' },
                 }}
               >
-                "His approach to Material Design isn't just about guidelines; it's about creating
-                a tactile experience that users instinctively understand."
+                "L'automatisation et l'infrastructure as code ne sont pas juste des outils,
+                ce sont les fondations d'un développement moderne et scalable."
               </Typography>
 
               <Box>
                 <Typography variant="h6" sx={{ color: 'text.primary', fontWeight: 700 }}>
-                  Elena Richardson
+                  Franck Judes
                 </Typography>
                 <Typography sx={{ color: 'text.secondary' }}>
-                  Design Director at Nexus Tech
+                  Full Stack Developer & DevOps Engineer
                 </Typography>
               </Box>
             </Stack>
