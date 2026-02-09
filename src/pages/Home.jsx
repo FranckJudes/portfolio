@@ -363,28 +363,31 @@ const Home = () => {
         <Grid container spacing={4}>
           {[
             {
-              title: 'Keycloak SSO Kubernetes OIDC',
-              category: 'DevOps',
-              tags: ['Kubernetes', 'Keycloak', 'SSO', 'Security'],
-              description: 'Single Sign-On avec Keycloak, OpenID Connect et Kubernetes pour applications cloud-native.',
-              image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+              title: 'KAIROS-HARMONI',
+              category: 'Kairos',
+              tags: ['React 19', 'Spring Boot', 'BPMN', 'Docker'],
+              description: 'Application de gestion d\'entreprise avec BPMN, diagrammes interactifs, Gantt, éditeur Tiptap et analytics.',
+              image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
               link: '/project/0',
+              isPrivate: true,
             },
             {
-              title: 'E-Commerce Spring Boot 3',
-              category: 'Full Stack',
-              tags: ['Spring Boot', 'Docker', 'Kafka', 'Microservices'],
-              description: 'Architecture microservices complète avec Spring Boot 3, Docker, Keycloak, Kafka et Zipkin.',
-              image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
-              link: '/project/9',
+              title: 'KAIROS-ESIGN',
+              category: 'Kairos',
+              tags: ['React 18', 'Spring Boot', 'Docker', 'PDF'],
+              description: 'Plateforme de signature électronique avec drag-and-drop, visualisation PDF et gestion documentaire.',
+              image: 'https://images.unsplash.com/photo-1557992260-ec58e38d363c?w=800&q=80',
+              link: '/project/1',
+              isPrivate: true,
             },
             {
-              title: 'React Native Boilerplate',
-              category: 'Mobile',
-              tags: ['React Native', 'Expo', 'TypeScript', 'Redux'],
-              description: 'Boilerplate production-ready avec Expo SDK 54, React 19.1, Expo Router v6 et Redux Toolkit.',
-              image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80',
-              link: '/project/10',
+              title: 'Kairos-KM-Stable',
+              category: 'Kairos',
+              tags: ['Laravel 9', 'PHP 8', 'Docker', 'LDAP'],
+              description: 'Système de gestion des connaissances avec authentification LDAP, génération PDF et WebSockets temps réel.',
+              image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80',
+              link: '/project/2',
+              isPrivate: true,
             },
           ].map((project, index) => (
             <Grid item xs={12} md={6} lg={4} key={index}>
@@ -418,21 +421,33 @@ const Home = () => {
                         objectFit: 'cover',
                       }}
                     />
-                    <Chip
-                      label={project.category}
-                      size="small"
-                      sx={{
-                        position: 'absolute',
-                        top: 16,
-                        right: 16,
-                        fontWeight: 900,
-                        fontSize: '0.625rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: 1,
-                        bgcolor: 'primary.main',
-                        color: 'white',
-                      }}
-                    />
+                    <Box sx={{ position: 'absolute', top: 16, right: 16, display: 'flex', flexDirection: 'column', gap: 1, alignItems: 'flex-end' }}>
+                      <Chip
+                        label={project.category}
+                        size="small"
+                        sx={{
+                          fontWeight: 900,
+                          fontSize: '0.625rem',
+                          textTransform: 'uppercase',
+                          letterSpacing: 1,
+                          bgcolor: project.category === 'Kairos' ? '#E91E63' : 'primary.main',
+                          color: 'white',
+                        }}
+                      />
+                      {project.isPrivate && (
+                        <Chip
+                          label="PRIVATE"
+                          size="small"
+                          sx={{
+                            fontWeight: 900,
+                            fontSize: '0.625rem',
+                            letterSpacing: 1,
+                            bgcolor: 'warning.main',
+                            color: 'white',
+                          }}
+                        />
+                      )}
+                    </Box>
                   </Box>
                   <CardContent sx={{ p: 3 }}>
                     <Typography

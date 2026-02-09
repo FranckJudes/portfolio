@@ -30,7 +30,7 @@ const Work = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const filters = ['All', 'DevOps', 'Full Stack', 'Infrastructure'];
+  const filters = ['All', 'Kairos', 'DevOps', 'Full Stack', 'Infrastructure'];
 
   const devopsSkills = [
     {
@@ -66,6 +66,44 @@ const Work = () => {
   ];
 
   const projects = [
+    // === KAIROS PROJECTS (Private - Demo Available) ===
+    {
+      title: 'KAIROS-HARMONI',
+      category: 'Business Process Management',
+      description: 'Application de gestion d\'entreprise avec BPMN, diagrammes interactifs, Gantt, éditeur riche Tiptap. Dashboard analytics avec graphiques dynamiques et gestion de workflows.',
+      type: 'kairos',
+      subcategory: 'Full Stack',
+      aspectRatio: '16/9',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+      isPrivate: true,
+      hasDemo: true,
+      tech: ['React 19', 'Spring Boot', 'BPMN', 'Docker', 'Charts', 'Gantt', 'Tiptap', 'WebSocket'],
+    },
+    {
+      title: 'KAIROS-ESIGN',
+      category: 'Electronic Signature',
+      description: 'Plateforme de signature électronique avec drag-and-drop, visualisation PDF, gestion de documents et éditeur visuel. Intégration complète pour flux de signature.',
+      type: 'kairos',
+      subcategory: 'Full Stack',
+      aspectRatio: '16/9',
+      image: 'https://images.unsplash.com/photo-1557992260-ec58e38d363c?w=800&q=80',
+      isPrivate: true,
+      hasDemo: true,
+      tech: ['React 18', 'Spring Boot', 'Docker', 'Jenkins', 'PDF', 'Drag-Drop', 'TypeScript'],
+    },
+    {
+      title: 'Kairos-KM-Stable',
+      category: 'Knowledge Management',
+      description: 'Système de gestion des connaissances avec authentification LDAP, génération PDF, WebSockets temps réel. Gestion documentaire avec recherche et organisation hiérarchique.',
+      type: 'kairos',
+      subcategory: 'Full Stack',
+      aspectRatio: '16/9',
+      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80',
+      isPrivate: true,
+      hasDemo: true,
+      tech: ['Laravel 9', 'PHP 8', 'Docker', 'MySQL', 'LDAP', 'WebSocket', 'PDF', 'SaaS'],
+    },
+
     // === DEVOPS & CLOUD PROJECTS ===
     {
       title: 'Keycloak SSO Kubernetes OIDC',
@@ -342,6 +380,7 @@ const Work = () => {
                          project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          (project.tech && project.tech.some(t => t.toLowerCase().includes(searchQuery.toLowerCase())));
     const matchesFilter = activeFilter === 'All' ||
+                         (activeFilter === 'Kairos' && project.type === 'kairos') ||
                          (activeFilter === 'DevOps' && project.type === 'devops') ||
                          (activeFilter === 'Full Stack' && project.type === 'fullstack') ||
                          (activeFilter === 'Infrastructure' && (project.subcategory === 'Infrastructure' || project.subcategory === 'DevOps Tools' || project.subcategory === 'Cloud' || project.subcategory === 'Orchestration'));
@@ -582,6 +621,7 @@ const Work = () => {
                       left: 16,
                       display: 'flex',
                       gap: 1,
+                      flexWrap: 'wrap',
                     }}
                   >
                     <Chip
@@ -595,15 +635,40 @@ const Work = () => {
                       }}
                     />
                     <Chip
-                      label={project.type === 'devops' ? 'DevOps' : project.type === 'fullstack' ? 'Full Stack' : 'Project'}
+                      label={project.type === 'devops' ? 'DevOps' : project.type === 'fullstack' ? 'Full Stack' : project.type === 'kairos' ? 'Kairos' : 'Project'}
                       size="small"
                       sx={{
-                        bgcolor: project.type === 'devops' ? 'secondary.main' : project.type === 'fullstack' ? 'success.main' : 'background.default',
-                        color: project.type === 'devops' || project.type === 'fullstack' ? 'white' : 'text.secondary',
+                        bgcolor: project.type === 'devops' ? 'secondary.main' : project.type === 'fullstack' ? 'success.main' : project.type === 'kairos' ? '#E91E63' : 'background.default',
+                        color: project.type === 'devops' || project.type === 'fullstack' || project.type === 'kairos' ? 'white' : 'text.secondary',
                         fontWeight: 700,
                         fontSize: '0.75rem',
                       }}
                     />
+                    {project.isPrivate && (
+                      <Chip
+                        label="PRIVATE"
+                        size="small"
+                        sx={{
+                          bgcolor: 'warning.main',
+                          color: 'white',
+                          fontWeight: 900,
+                          fontSize: '0.7rem',
+                          letterSpacing: 1,
+                        }}
+                      />
+                    )}
+                    {project.hasDemo && (
+                      <Chip
+                        label="DEMO"
+                        size="small"
+                        sx={{
+                          bgcolor: 'success.dark',
+                          color: 'white',
+                          fontWeight: 700,
+                          fontSize: '0.7rem',
+                        }}
+                      />
+                    )}
                   </Box>
                 </Box>
 
